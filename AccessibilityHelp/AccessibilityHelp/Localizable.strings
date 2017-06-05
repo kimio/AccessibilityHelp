@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  AccessibilityHelp
+
+  Created by Felipe Kimio Nishikaku on 5/26/17.
+  Copyright © 2017 Felipe Kimio Nishikaku. All rights reserved.
+*/
+
+/* Labels */
+"main.label.mainInformation" =  "POC para auxiliar no desenvolvimento de acessibilidade";
+"main.label.howTo" = "Primeiro vamos ativar a acessibilidade no iPhone:\n\n1. Entre em: Ajustes,Geral, Acessibilidade e Atalho de Acessibilidade.\n2. Ative a opção VoiceOver";
+"main.label.enableAccessibility" = "Agora para ativar a Acessibilidade, toque 3 vezes rapidamente o botão home do iPhone";
+
+/* Button */
+"main.button.buttonOK" =  "ok";
+
+/* Image */
+"main.image.imageSettings" =  "Imagem mostrando a tela de Atalho de Acessibilidade";

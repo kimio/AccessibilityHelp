@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>menuItens</key>
+	<array>
+		<string>Habilitar e desabilitar Acessibilidade</string>
+		<string>Verificar quando esta Focado</string>
+		<string>Alterar foco para outro item</string>
+		<string>Alterar ordem do foco</string>
+		<string>Voice over dia mês ano</string>
+	</array>
+</dict>
+</plist>
