@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UIView+Util.h"
 #import "UIViewProtocol.h"
+#import "MenuBusiness.h"
 
 @interface ViewController ()<UIViewProtocol>
 @property (weak, nonatomic) IBOutlet UILabel *mainInformation;
@@ -27,8 +28,6 @@ static NSString* const mainHowToText = @"main.label.howTo";
 static NSString* const mainImageSettings = @"main.image.imageSettings";
 static NSString* const mainEnableAccessibility = @"main.label.enableAccessibility";
 
-static NSString* const mainSegueGoToMenu = @"goToMenu";
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +39,7 @@ static NSString* const mainSegueGoToMenu = @"goToMenu";
     [super didReceiveMemoryWarning];
 }
 - (IBAction)goToMenu:(id)sender {
-    [self performSegueWithIdentifier:mainSegueGoToMenu sender:self];
+    [[MenuBusiness new] goToMenu:self andNumberOfMenu:nil];
 }
 
 #pragma UIViewProtocol

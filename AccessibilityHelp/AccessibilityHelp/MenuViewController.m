@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "UIView+Util.h"
+#import "MenuBusiness.h"
 
 @interface MenuViewController ()
 @property (nonatomic,strong) NSArray* itens;
@@ -26,6 +27,7 @@ static NSString * const menuItens = @"menuItens";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    [self performSegueWithIdentifier:@"" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -45,8 +47,6 @@ static NSString * const menuItens = @"menuItens";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"alert" message:[NSString stringWithFormat:@"%d",indexPath.row]  delegate:nil cancelButtonTitle:@"close" otherButtonTitles:nil];
-    
-    [alert show];
+    [[MenuBusiness new] goToMenu:self andNumberOfMenu:[NSNumber numberWithLong:indexPath.row+1]];
 }
 @end
