@@ -12,7 +12,15 @@
 "main.label.enableAccessibility" = "Agora para ativar a Acessibilidade, toque 3 vezes rapidamente o botão home do iPhone";
 
 /* Button */
-"main.button.buttonOK" =  "ok";
+"main.button.buttonOK" = "ok";
+"acessibility.button.ativo" = "ativo";
+"acessibility.button.inativo" = "inativo";
 
 /* Image */
 "main.image.imageSettings" =  "Imagem mostrando a tela de Atalho de Acessibilidade";
+
+/* View */
+"textfield.cool" = ":)";
+"textfield.sad" = ":(";
+"textfield.happyFace" = "carinha feliz";
+"textfield.badFace" = "carinha triste";

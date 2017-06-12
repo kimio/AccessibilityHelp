@@ -11,6 +11,10 @@
 @implementation UIView (Util)
 static NSString* const plist = @"plist";
 
+- (NSString *)localizableString:(NSString *)string{
+    return NSLocalizedString(string, nil);
+}
+
 - (void)setTextWithLocalizableString:(NSString *)string {
     NSString* text = NSLocalizedString(string, nil);
     if([self isKindOfClass:UILabel.class]){

@@ -10,6 +10,8 @@
 
 @interface UIView (Util)
 
+- (NSString *)localizableString:(NSString *)string;
+
 - (void)setTextWithLocalizableString:(NSString *)string;
 
 - (void)acessibilityLabelEqualsText;
