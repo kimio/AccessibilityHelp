@@ -24,3 +24,6 @@
 "textfield.sad" = ":(";
 "textfield.happyFace" = "carinha feliz";
 "textfield.badFace" = "carinha triste";
+
+/* UITableViewCell*/
+"uitableviewcell.cellItensRow" = "item %lu de %lu";

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2900A3121EF74D1B00078D88 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900A3101EF74D1A00078D88 /* TableViewCell.m */; };
+		2900A3161EF74DE700078D88 /* UICheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900A3151EF74DE700078D88 /* UICheckBox.m */; };
 		291422E51EE8DCD400EA185A /* MenuBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 291422E41EE8DCD400EA185A /* MenuBusiness.m */; };
 		291422E91EEA261100EA185A /* AccessibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291422E81EEA261100EA185A /* AccessibilityController.m */; };
 		2964E8D91EDA0C1400EBE8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2964E8D81EDA0C1400EBE8A2 /* Assets.xcassets */; };
@@ -46,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2900A30F1EF74D1A00078D88 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		2900A3101EF74D1A00078D88 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		2900A3141EF74DE700078D88 /* UICheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICheckBox.h; sourceTree = "<group>"; };
+		2900A3151EF74DE700078D88 /* UICheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICheckBox.m; sourceTree = "<group>"; };
 		291422E31EE8DCD400EA185A /* MenuBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBusiness.h; path = business/MenuBusiness.h; sourceTree = "<group>"; };
 		291422E41EE8DCD400EA185A /* MenuBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBusiness.m; path = business/MenuBusiness.m; sourceTree = "<group>"; };
 		291422E71EEA261100EA185A /* AccessibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessibilityController.h; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			children = (
 				297F65601ED8F2DA00D490C3 /* UIView+Util.h */,
 				297F65611ED8F2DA00D490C3 /* UIView+Util.m */,
+				2900A3141EF74DE700078D88 /* UICheckBox.h */,
+				2900A3151EF74DE700078D88 /* UICheckBox.m */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -156,6 +164,8 @@
 				291422E81EEA261100EA185A /* AccessibilityController.m */,
 				29A035FE1EEDDD870082B124 /* TableView.h */,
 				29A035FF1EEDDD870082B124 /* TableView.m */,
+				2900A30F1EF74D1A00078D88 /* TableViewCell.h */,
+				2900A3101EF74D1A00078D88 /* TableViewCell.m */,
 			);
 			name = acessibilidade;
 			sourceTree = "<group>";
@@ -382,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2900A3161EF74DE700078D88 /* UICheckBox.m in Sources */,
 				291422E51EE8DCD400EA185A /* MenuBusiness.m in Sources */,
 				297F65501ED8A11100D490C3 /* ViewController.m in Sources */,
 				291422E91EEA261100EA185A /* AccessibilityController.m in Sources */,
@@ -391,6 +402,7 @@
 				297F65621ED8F2DA00D490C3 /* UIView+Util.m in Sources */,
 				29670BDB1EED645E00677CD0 /* Button.m in Sources */,
 				297F65531ED8AA5500D490C3 /* MenuViewController.m in Sources */,
+				2900A3121EF74D1B00078D88 /* TableViewCell.m in Sources */,
 				29DB12461EEA411400FB0AA8 /* TextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

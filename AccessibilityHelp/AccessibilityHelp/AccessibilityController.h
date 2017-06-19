@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+Util.h"
+#import "UICheckBox.h"
 
-@interface AccessibilityController : UIViewController
+@interface AccessibilityController : UIViewController<UITableViewDataSource,UITableViewDelegate,UICheckBoxDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *fieldTexto;
 @property(assign,nonatomic) NSUInteger accessibilityIndex;
 @property (weak, nonatomic) IBOutlet UIButton *buttonTurnOnOff;
@@ -18,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *fieldFoco1;
 @property (weak, nonatomic) IBOutlet UITextField *fieldFoco2;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFoco;
-
 
 
 @end

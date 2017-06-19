@@ -10,5 +10,6 @@
 
 @interface MenuBusiness : NSObject
 
--(void) goToMenu:(UIViewController *)controller andNumberOfMenu:(NSNumber *)indexMenu;
+- (void)goToMenu:(UIViewController *)controller andNumberOfMenu:(NSNumber *)indexMenu;
++ (NSNumber *)currentIndexAccessibility;
 @end

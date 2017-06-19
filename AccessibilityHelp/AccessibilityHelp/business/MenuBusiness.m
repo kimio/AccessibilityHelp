@@ -11,8 +11,13 @@
 @implementation MenuBusiness
 
 static NSString* const mainSegueGoToMenu = @"goToMenu%@";
+static NSNumber* currentIndexAccessibility = 0;
 
--(void) goToMenu:(UIViewController *)controller andNumberOfMenu:(NSNumber *)indexMenu {
++ (NSNumber *)currentIndexAccessibility {
+    return currentIndexAccessibility;
+}
+- (void)goToMenu:(UIViewController *)controller andNumberOfMenu:(NSNumber *)indexMenu {
+    currentIndexAccessibility = indexMenu;
     [controller performSegueWithIdentifier:[NSString stringWithFormat:mainSegueGoToMenu,
                                             (indexMenu)?[indexMenu stringValue]:[NSString string]
                                             ] sender:controller];

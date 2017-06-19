@@ -8,15 +8,21 @@
 
 #import "AccessibilityController.h"
 #import "TableView.h"
+#import "MenuBusiness.h"
+#import "TableViewCell.h"
+
 @interface AccessibilityController()
 
 @property (weak, nonatomic) IBOutlet TableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UITableView *uitableview;
 
 @end
 @implementation AccessibilityController
 
 static NSString* const acessibilityButtonAtivo = @"acessibility.button.ativo";
 static NSString* const acessibilityButtonInativo = @"acessibility.button.inativo";
+static NSString* const uitableviewcellCellItensRow = @"uitableviewcell.cellItensRow";
 
 static NSString * const plistMenu = @"menu";
 static NSString * const menuItens = @"faces";
@@ -24,6 +30,7 @@ static NSString * const menuItens = @"faces";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setDatasourceAndDelegateTableView];
+    [self setDatasourceUITableView];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -84,20 +91,65 @@ static NSString * const menuItens = @"faces";
 #pragma Accessibility Item 6
 
 - (void)setDatasourceAndDelegateTableView{
-    if(self.tableView){
+    if(self.currentAccessibility==6){
         self.tableView.itens = (NSArray *)[[self.view getContentFromPlist:plistMenu] objectForKey:menuItens];
         self.tableView.delegate = self.tableView;
         self.tableView.dataSource = self.tableView;
         self.tableView.acessibilityFocusElement = self.buttonFoco;
     }
+    
 }
 - (void)focusWhenFinishLoad{
-    if(self.tableView){
+    if(self.currentAccessibility==6){
         self.navigationController.navigationBar.accessibilityElementsHidden=true;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, self.buttonFoco);
             self.navigationController.navigationBar.accessibilityElementsHidden=false;
         });
     }
+}
+
+#pragma Accessibility Item 7
+
+- (void)setDatasourceUITableView{
+    if(self.currentAccessibility==7){
+        self.uitableview.dataSource = self;
+    }
+}
+
+#pragma Accessibility Item 7 Datasource
+static NSString * const cellIdentifier = @"cellHello";
+static NSUInteger const rows = 29;
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return rows;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSString *string = [cell.label localizableString:uitableviewcellCellItensRow];
+    [cell.label setTextWithLocalizableString:[NSString stringWithFormat:string,indexPath.row+1,rows]];
+    [cell.checkbox setIsChecked:((rand()%2)%2)];
+    cell.checkbox.delegate = self;
+    
+    [cell.checkbox setIsAccessibilityElement:true];
+    [cell.label setIsAccessibilityElement:true];
+    [cell.content setIsAccessibilityElement:true];
+    cell.accessibilityElements = @[cell.checkbox,cell.label,cell.content];
+    return cell;
+}
+
+#pragma Accessibility Item 7 UICheckBoxDelegate
+- (void)check:(UICheckBox *)checkbox{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, ([checkbox isChecked])?
+                                        [self.view localizableString:acessibilityButtonAtivo]:
+                                        [self.view localizableString:acessibilityButtonInativo]);
+    });
+    
+}
+#pragma Util
+- (NSUInteger)currentAccessibility{
+    return [MenuBusiness.currentIndexAccessibility integerValue];
 }
 @end
